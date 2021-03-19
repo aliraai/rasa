@@ -628,7 +628,7 @@ class MongoTrackerStore(TrackerStore):
         return serialised.get("events", [])
 
     @staticmethod
-    def _events_since_last_session_start(events: List[Dict], fetch_events_from_all_sessions: bool = False) -> List[Dict]:
+    def _events_since_last_session_start(events: List[Dict]) -> List[Dict]:
         """Retrieve events since and including the latest `SessionStart` event.
 
         Args:
