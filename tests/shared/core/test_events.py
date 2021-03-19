@@ -336,6 +336,14 @@ def test_md_format_message_using_short_entity_syntax():
     )
     assert formatted == """I am from [Berlin](city)."""
 
+def test_md_format_message_using_short_entity_syntax_no_start_end():
+    formatted = format_message(
+        None, # TODO: JUZL: Right?
+        intent="location",
+        entities=[{"entity": "city", "value": "Berlin"}],
+    )
+    assert formatted == """I am from [Berlin](city)."""
+
 
 def test_md_format_message_using_long_entity_syntax():
     formatted = format_message(

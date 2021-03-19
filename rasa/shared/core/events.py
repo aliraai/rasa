@@ -95,6 +95,7 @@ def format_message(
 
     message_from_md = entities_parser.parse_training_example(text, intent)
     deserialised_entities = deserialise_entities(entities)
+    # TODO: JUZL:
     return TrainingDataWriter.generate_message(
         {"text": message_from_md.get(TEXT), "entities": deserialised_entities}
     )
